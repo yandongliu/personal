@@ -17,6 +17,8 @@ set incsearch
 set ignorecase
 set ruler
 set paste
+set completeopt=menu,longest,preview 
+set ignorecase 
 colorscheme elflord 
 
 
