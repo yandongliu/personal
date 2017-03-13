@@ -1,46 +1,59 @@
-
-set nu
-set ai
+let mapleader = '\' " leader key
+set nu " line number
+set ai " auto indent
+" tab management
 if version >= 700
         map <F5> :tabnew<CR>
-        map <F6> :tabclose<CR>
-        map <C-P> gT
-        map <C-N> gt
+        " map <F6> :tabclose<CR>
+        map <C-N> gT
+        map <C-P> gt
 endif
-synt on
-set hlsearch
+synt on " syntax
+set hlsearch " search
+" highlight Search ctermbg=black ctermfg=white term=underline
+" indent management
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set expandtab
-"set sts=4
 set incsearch
 set ignorecase
-"set ruler
+set ruler
 set laststatus=2
 set paste
-set completeopt=menu,longest,preview
-set ignorecase
-colorscheme monokai
-" colorscheme solarized
-execute pathogen#infect()
-filetype plugin indent on
-"let g:solarized_termcolors=256
-"set background=dark
-"colorscheme solarized
+" set completeopt=menu,longest,preview
 
+" Colorscheme
+if exists('$TMUX') 
+    set term=screen-256color 
+endif
+set background=dark
+colorscheme peaksea
 
-nmap <Left> <C-W><
-nmap <Right> <C-W>>
-"nmap <Up> <C-W>-
-"nmap <Down> <C-W>+
+" per filetype settings
+filetype plugin on
+filetype indent on
 
-"nmap <F7> :TlistToggle<CR>
-map <leader><C-n> :NERDTreeToggle<CR>
-map <leader><C-f> :NERDTreeFind<cr>
-let g:ctrlp_map = '<leader><c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+autocmd FileType go nmap <F8> :!go run %<CR>
 
-au FileType py nmap <F6> :!python %<CR>
-au FileType go nmap <F6> :!go run %<CR>
+""" Plugins """
+call pathogen#infect('~/.vim/sources_non_forked/{}')
 
+" NERDTree
+map <leader>n :NERDTreeToggle<CR>
+map <leader>f :NERDTreeFind<cr>
+let g:NERDTreeWinPos = "right"
+
+" BufExplorer
+map <leader>b :BufExplorer<CR>
+
+" Python specifics
+function! SetupPython()
+    " Here, you can have the final say on what is set.  So
+    " fixup any settings you don't like.
+    setlocal softtabstop=4
+    setlocal tabstop=4
+    setlocal shiftwidth=4
+	nmap <F7> :!python %<CR>
+endfunction
+command! -bar SetupPython call SetupPython()
