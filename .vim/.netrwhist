@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/yandong/projects/tornado_entity_new/mappers'
+let g:netrw_dirhist_2='/home/yandong/projects/tornado_entity_new/templates'
+let g:netrw_dirhist_3='/home/yandong/projects/tornado_entity_new/templates/entity'
