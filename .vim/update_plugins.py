@@ -19,6 +19,11 @@ PLUGINS = """
 bufexplorer https://github.com/corntrace/bufexplorer
 nerdtree https://github.com/scrooloose/nerdtree
 vim-go https://github.com/fatih/vim-go
+vim-fugitive https://github.com/tpope/vim-fugitive
+ack.vim https://github.com/mileszs/ack.vim
+syntastic https://github.com/scrooloose/syntastic
+vim-airline https://github.com/vim-airline/vim-airline
+supertab https://github.com:ervandew/supertab
 """.strip()
 
 GITHUB_ZIP = '%s/archive/master.zip'
