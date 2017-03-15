@@ -28,6 +28,9 @@ endif
 set background=dark
 colorscheme peaksea
 
+set cursorline
+hi CursorLine cterm=NONE ctermbg=black ctermfg=white
+
 "per filetype settings
 filetype plugin on
 filetype indent on
