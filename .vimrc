@@ -58,3 +58,5 @@ function! SetupPython()
 	nmap <F7> :!python %<CR>
 endfunction
 command! -bar SetupPython call SetupPython()
+
+set pastetoggle=<F2>
