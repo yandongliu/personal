@@ -3,7 +3,9 @@ if exists('$TMUX')
     set term=screen-256color 
 endif
 set background=dark
-colorscheme codedark
+" colorscheme codedark
+" colorscheme darkblue
+colorscheme PaperColor
 
 let mapleader = '\' "leader key
 set nu "line number
@@ -37,7 +39,7 @@ hi TabLineSel ctermfg=Green ctermbg=Black
 filetype plugin on
 filetype indent on
 
-autocmd FileType go nmap <F7> :GoRun %<CR>
+"autocmd FileType go nmap <F7> :GoRun %<CR>
 
 """Plugins"""
 call pathogen#infect('~/.vim/sources_non_forked/{}')
@@ -60,3 +62,5 @@ function! SetupPython()
 	nmap <F7> :!python3 %<CR>
 endfunction
 command! -bar SetupPython call SetupPython()
+
+" autocmd vimenter * ++nested colorscheme gruvbox
